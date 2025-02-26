@@ -1,8 +1,6 @@
 package dev.guilhermeluan.weatherapi.controller;
 
-import dev.guilhermeluan.weatherapi.infra.client.SendVisualCrossing;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
+import dev.guilhermeluan.weatherapi.service.WeatherService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,17 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/v1/weather")
 public class WeatherController {
+    private final WeatherService weatherService;
 
-    @Value("${api.key.visual_crossing}")
-    private String apiKey;
-    private SendVisualCrossing sendVisualCrossing;
-
-    public WeatherController(SendVisualCrossing sendVisualCrossing) {
-        this.sendVisualCrossing = sendVisualCrossing;
+    public WeatherController(WeatherService weatherService) {
+        this.weatherService = weatherService;
     }
 
     @GetMapping
-    public String getWeather() {
-        return sendVisualCrossing.getWeather("Brazil", apiKey, "json").toString();
+    public Object getTodayWeather() {
+        return weatherService.getTodayWeather();
     }
 }
