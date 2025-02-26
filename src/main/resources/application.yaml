@@ -1,3 +1,9 @@
 spring:
   application:
     name: weather
+
+api:
+  base_url:
+    visual_crossing: https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/
+  key:
+    visual_crossing: ${VISUAL_CROSSING_API_KEY}
