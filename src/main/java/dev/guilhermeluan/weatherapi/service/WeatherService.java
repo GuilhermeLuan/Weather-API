@@ -1,5 +1,6 @@
 package dev.guilhermeluan.weatherapi.service;
 
+import dev.guilhermeluan.weatherapi.infra.client.GetWeatherResponseDTO;
 import dev.guilhermeluan.weatherapi.infra.client.SendVisualCrossing;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class WeatherService {
         this.sendVisualCrossing = sendVisualCrossing;
     }
 
-    public Object getTodayWeather() {
-        return sendVisualCrossing.getTodayWeather("Brazil", apiKey, "json");
+    public GetWeatherResponseDTO getTodayWeather(String location, String contentType, String unitGroup) {
+        return sendVisualCrossing.getTodayWeather(location, apiKey, contentType, unitGroup);
     }
 }

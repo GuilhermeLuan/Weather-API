@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
         url = "${api.base_url.visual_crossing}")
 public interface SendVisualCrossing {
     @GetMapping("/{location}/today")
-    Object getTodayWeather(
+    GetWeatherResponseDTO getTodayWeather(
             @PathVariable("location") String location,
             @RequestParam("key") String apiKey,
-            @RequestParam(value = "contentType", defaultValue = "json", required = false) String contentType
-    );
+            @RequestParam(value = "contentType", defaultValue = "json", required = false) String contentType,
+            @RequestParam(value = "unitGroup", defaultValue = "metric", required = false) String unitGroup
+            );
 }
+
