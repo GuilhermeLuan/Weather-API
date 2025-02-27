@@ -2,9 +2,11 @@ package dev.guilhermeluan.weatherapi.utils;
 
 import dev.guilhermeluan.weatherapi.infra.client.DayDTO;
 import dev.guilhermeluan.weatherapi.infra.client.GetWeatherResponseDTO;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class CreateWeather {
     public GetWeatherResponseDTO createTodayWeather() {
         DayDTO day = new DayDTO("2025-02-27", 24.3, 29.6, 20.0, 24.2);
