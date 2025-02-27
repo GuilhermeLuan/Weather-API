@@ -1,4 +1,6 @@
 spring:
+  config:
+    import: optional:classpath:.env[.properties]
   application:
     name: weather
   cache:
@@ -10,6 +12,12 @@ spring:
       port: ${REDIS_PORT:6379}
       password: ${REDIS_PASSWORD:my-password}
       username: ${REDIS_USERNAME:default}
+server:
+  error:
+    include-stacktrace: on_param
+  tomcat:
+    threads:
+      max: 20
 
 api:
   base_url:
