@@ -5,9 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class GetWeatherResponseDTO {
+public class GetWeatherResponseDTO implements Serializable {
 
     private String datetime;
     private String address;
@@ -105,7 +106,7 @@ public class GetWeatherResponseDTO {
     }
 }
 
-class DayDTO {
+class DayDTO implements Serializable {
 
     private String datetime;
     private Double temp;

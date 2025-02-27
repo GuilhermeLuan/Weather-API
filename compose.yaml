@@ -1,6 +1,9 @@
 services:
   redis:
-    image: redis
-    command: redis-server --requirepass Redis2019!
+    image: bitnami/redis:latest
+    restart: always
     ports:
       - "6379:6379"
+    environment:
+      - REDIS_PASSWORD=my-password
+      - REDIS_PORT_NUMBER=6379
