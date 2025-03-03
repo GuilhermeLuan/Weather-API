@@ -1,6 +1,5 @@
 package dev.guilhermeluan.weatherapi.controller;
 
-import dev.guilhermeluan.weatherapi.WeatherApiApplication;
 import dev.guilhermeluan.weatherapi.config.RestAssuredConfig;
 import dev.guilhermeluan.weatherapi.infra.client.SendVisualCrossing;
 import dev.guilhermeluan.weatherapi.utils.FileUtil;
@@ -9,6 +8,7 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -42,6 +42,7 @@ class WeatherControllerTestIT {
     }
 
     @Test
+    @DisplayName("GET /v1/weather/Brasil returns Brasil's weather when successful")
     void getTodayWeather_ReturnsGetWeatherResponseDTO_WhenSuccessful() throws IOException {
         var location = "Brazil";
         var expectedResponse = fileUtil.readResourceFile("weather/expected-get-weather-response-200.json");
