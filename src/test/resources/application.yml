@@ -1,18 +1,31 @@
-#spring:
-#  application:
-#    name: weather
-#  cache:
-#    cache-names: weather
-#    type: redis
-#  data:
-#    redis:
-#      host: ${REDIS_HOST:localhost}
-#      port: ${REDIS_PORT:6379}
-#      password: ${REDIS_PASSWORD:my-password}
-#      username: ${REDIS_USERNAME:default}
-#
-#api:
-#  base_url:
-#    visual_crossing: https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/
-#  key:
-#    visual_crossing: ${VISUAL_CROSSING_API_KEY}
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: weather
+  cache:
+    cache-names: weather
+    type: redis
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:my-password}
+      username: ${REDIS_USERNAME:default}
+logging:
+  level:
+    com:
+      github:
+        tomakehurst:
+          wiremock: DEBUG
+    org:
+      springframework:
+        beans: DEBUG
+        cloud:
+          openfeign: DEBUG
+
+api:
+  base_url:
+    visual_crossing: http://localhost:${wiremock.server.port}
+  key:
+    visual_crossing: MOCK_KEY

@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/v1/weather/Brasil",
+    "queryParameters": {
+      "key": { "equalTo": "MOCK_KEY" },
+      "contentType": { "equalTo": "json" },
+      "unitGroup": { "equalTo": "metric" }
+    }
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "get-visual-crossing-200.json",
+    "headers": { "Content-Type": "application/json" }
+  }
+}
