@@ -44,7 +44,7 @@ class WeatherControllerTestIT {
     @Test
     @DisplayName("GET /v1/weather/Brasil returns Brasil's weather when successful")
     void getTodayWeather_ReturnsGetWeatherResponseDTO_WhenSuccessful() throws IOException {
-        var location = "Brazil";
+        var location = "Brasil";
         var expectedResponse = fileUtil.readResourceFile("weather/expected-get-weather-response-200.json");
 
         RestAssured.given()

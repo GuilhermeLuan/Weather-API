@@ -1,10 +1,10 @@
 {
-  "datetime": "2025-02-27",
+  "datetime": "2025-03-03",
   "address": "Brasil",
   "timezone": "America/Sao_Paulo",
   "description": "Similar temperatures continuing with no rain expected.",
-  "temp": 24.3,
-  "tempMax": 29.6,
+  "temp": 23.3,
+  "tempMax": 30.0,
   "tempMin": 20.0,
-  "feelsLike": 24.2
+  "feelsLike": 23.3
 }

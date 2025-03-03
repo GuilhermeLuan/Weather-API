@@ -1,10 +1,1 @@
-{
-  "datetime": "2025-02-28",
-  "address": "Brasil",
-  "timezone": "America/Sao_Paulo",
-  "description": "Similar temperatures continuing with no rain expected.",
-  "temp": 23.1,
-  "tempMax": 29.5,
-  "tempMin": 18.0,
-  "feelsLike": 23.0
-}
+{"datetime":"2025-03-03","address":"Brasil","timezone":"America/Sao_Paulo","description":"Similar temperatures continuing with no rain expected.","temp":23.3,"tempMax":30.0,"tempMin":20.0,"feelsLike":23.3}
