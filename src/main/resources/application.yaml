@@ -12,6 +12,10 @@ spring:
       port: ${REDIS_PORT:6379}
       password: ${REDIS_PASSWORD:my-password}
       username: ${REDIS_USERNAME:default}
+springdoc:
+  swagger-ui:
+    path: /
+    disable-swagger-default-url: false
 server:
   error:
     include-stacktrace: on_param
